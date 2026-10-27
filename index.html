@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFA Coaching - Client Dashboard</title>
+    <style>
+        :root {
+            --bg-color: #0f1014;
+            --card-bg: #1a1c23;
+            --accent-color: #d4af37;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a5b8;
+            --border-color: #2a2e3d;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        header h1 {
+            color: var(--accent-color);
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        header p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        .section-title {
+            color: var(--accent-color);
+            margin: 25px 0 15px;
+            font-size: 20px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .info-box {
+            background: #222530;
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .info-box span {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+        .info-box strong {
+            color: var(--text-primary);
+            font-size: 16px;
+        }
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .photos-grid img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .meal-item, .workout-item {
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .meal-item:last-child, .workout-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        h3 {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        ul {
+            padding-right: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        li {
+            margin-bottom: 3px;
+        }
+        .macros {
+            font-size: 13px;
+            color: var(--accent-color);
+            margin-top: 5px;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin-top: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+        @media (max-width: 600px) {
+            .photos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>MFA Coaching</h1>
+        <p>مشرف البرنامج: كابتن مارك</p>
+    </header>
+
+    <!-- Client Profile -->
+    <div class="card">
+        <h2 style="color: var(--accent-color); margin-bottom: 15px; font-size: 18px;">بيانات العميل</h2>
+        <div class="info-grid">
+            <div class="info-box">
+                <span>الاسم</span>
+                <strong>عمر</strong>
+            </div>
+            <div class="info-box">
+                <span>العمر</span>
+                <strong>16 سنة</strong>
+            </div>
+            <div class="info-box">
+                <span>الطول</span>
+                <strong>170 سم</strong>
+            </div>
+            <div class="info-box">
+                <span>الوزن</span>
+                <strong>51 كجم</strong>
+            </div>
+        </div>
+        <h3 style="font-size: 14px; color: var(--text-secondary); margin-top: 10px;">صور البداية (قبل النظام):</h3>
+        <div class="photos-grid">
+            <img src="IMG-20261027-WA0063.jpg" alt="Front View">
+            <img src="IMG-20261027-WA0064.jpg" alt="Side View">
+            <img src="IMG-20261027-WA0062.jpg" alt="Back View">
+        </div>
+    </div>
+
+    <!-- Nutrition Plan -->
+    <div class="card">
+        <h2 class="section-title" style="margin-top: 0;">النظام الغذائي للتضخيم</h2>
+        <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 15px;">
+            إجمالي السعرات المستهدفة: <strong>~2,721 سعرة حرارية</strong> | 
+            بروتين: 102g | دهون: 75g | كارب: 408g
+        </p>
+
+        <div class="meal-item">
+            <h3>الوجبة الأولى (الإفطار - طاقة الصباح)</h3>
+            <ul>
+                <li>3 بيضات كاملة مسلوقة</li>
+                <li>100 جرام شوفان مطبوخ في الحليب</li>
+                <li>رغيف عيش بلدي (90 جرام)</li>
+                <li>ثمرة موز متوسطة</li>
+            </ul>
+            <div class="macros">الماكروز: بروتين ~28g | دهون ~22g | كارب ~95g | سعرات ~680 kcal</div>
+        </div>
+
+        <div class="meal-item" style="margin-top: 15px;">
+            <h3>الوجبة الثانية (الغداء - وجبة التضخيم الكبرى)</h3>
+            <ul>
+                <li>150 جرام صدور فراخ مشوية (وزن نيء)</li>
+                <li>200 جرام أرز أبيض مطبوخ أو مكرونة</li>
+                <li>طبق سلطة خضراء مع معلقة كبيرة زيت زيتون (15 مل)</li>
+            </ul>
+            <div class="macros">الماكروز: بروتين ~42g | دهون ~20g | كارب ~110g | سعرات ~780 kcal</div>
+        </div>
+
+        <div class="meal-item" style="margin-top: 15px;">
+            <h3>الوجبة الثالثة (ما قبل التمرين - طاقة سريعة)</h3>
+            <ul>
+                <li>150 جرام بطاطس مسلوقة أو مشوية في الفرن</li>
+                <li>معلقة كبيرة زبدة فول سوداني (20 جرام)</li>
+                <li>كوب حليب دافئ أو عصير طبيعي</li>
+            </ul>
+            <div class="macros">الماكروز: بروتين ~10g | دهون ~14g | كارب ~75g | سعرات ~450 kcal</div>
+        </div>
+
+        <div class="meal-item" style="margin-top: 15px;">
+            <h3>الوجبة الرابعة (ما بعد التمرين - تعويض المخازن)</h3>
+            <ul>
+                <li>150 جرام بطاطا حلوة مسلوقة أو مشوية</li>
+                <li>علبة زبادي يوناني أو لبن قروش (150 جرام)</li>
+                <li>حفنة تمر (3 ثمرات / 30 جرام)</li>
+            </ul>
+            <div class="macros">الماكروز: بروتين ~14g | دهون ~4g | كارب ~85g | سعرات ~430 kcal</div>
+        </div>
+
+        <div class="meal-item" style="margin-top: 15px;">
+            <h3>الوجبة الخامسة (العشاء / قبل النوم)</h3>
+            <ul>
+                <li>100 جرام جبنة قريش أو علبة تونة مصفاة</li>
+                <li>رغيف عيش أسمر صغير أو شريحتين توست أسمر</li>
+                <li>10 حبات مكسرات (بندق أو لوز / 15 جرام)</li>
+            </ul>
+            <div class="macros">الماكروز: بروتين ~18g | دهون ~15g | كارب ~43g | سعرات ~380 kcal</div>
+        </div>
+    </div>
+
+    <!-- Workout Plan -->
+    <div class="card">
+        <h2 class="section-title" style="margin-top: 0;">نظام التمرين (Upper/Lower + Arnold Split)</h2>
+        <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 15px;">
+            ملحوظة هامة: نظراً لوجود إصابة بالذراع، يرجى توخي الحذر التام واستشارة الكابتن عند الشعور بأي ألم.
+        </p>
+
+        <div class="workout-item">
+            <h3>اليوم الأول: Upper 1 (علوي)</h3>
+            <ul>
+                <li>بنش برس علوي بالدمبل (Incline Bench Press)</li>
+                <li>سحب عالي (Lat Pulldown)</li>
+                <li>ضغط أكتاف (Overhead Press)</li>
+            </ul>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/8Hx_A3JqQkI" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="workout-item" style="margin-top: 25px;">
+            <h3>اليوم الثاني: Lower 1 (سفلي)</h3>
+            <ul>
+                <li>ليج بريس (Leg Press)</li>
+                <li>رومانيان ديدليفت (Romanian Deadlift)</li>
+                <li>تمارين سمانة وبطن</li>
+            </ul>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/IZxyjW7MPJQ" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="workout-item" style="margin-top: 25px;">
+            <h3>اليوم الثالث: راحة (Rest) 🔋</h3>
+            <p style="font-size: 13px; color: var(--text-secondary);">يوم استشفاء عضلي كامل.</p>
+        </div>
+
+        <div class="workout-item" style="margin-top: 25px;">
+            <h3>اليوم الرابع: Arnold Split - Day 1 (صدر & ظهر)</h3>
+            <ul>
+                <li>تجميع صدر عالي (Incline Dumbbell Fly/Press)</li>
+                <li>تمرين سحب أرضي (Seated Cable Row)</li>
+            </ul>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/XYV3zVIYxOQ" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="workout-item" style="margin-top: 25px;">
+            <h3>اليوم الخامس: Arnold Split - Day 2 (أكتاف & ذراعين)</h3>
+            <ul>
+                <li>رفرفة جانبي للكتف (Lateral Raises)</li>
+                <li>بايسبس وترايسبس خفيف</li>
+            </ul>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/PjYWlv8VvgU" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 - MFA Coaching</p>
+    </footer>
+</div>
+
+</body>
+</html>
